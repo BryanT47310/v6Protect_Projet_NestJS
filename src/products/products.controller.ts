@@ -1,12 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Delete,
-  Res,
-  Param,
-  Body,
-} from '@nestjs/common';
+import { Controller, Get, Post, Res, Param, Body } from '@nestjs/common';
 import { Response } from 'express';
 import { ProductsService } from './products.service';
 
