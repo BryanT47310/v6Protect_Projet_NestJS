@@ -6,22 +6,21 @@ import { ProductsService } from './products.service';
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
-  //GetAllProducts
+  //Récupération de tous les produits
   @Get()
   getAllProducts(@Res() res: Response) {
     const products = this.productsService.getAllProducts();
     res.render('products', { products });
   }
 
-  //AddProduct
+  //Ajout d'un produit
   @Post()
   addProduct(@Body() product: any, @Res() res: Response) {
     this.productsService.addProduct(product);
-    const products = this.productsService.getAllProducts();
-    res.render('products', { products });
+    res.redirect('/products');
   }
 
-  //DeleteProduct
+  //Suppression du produit
   @Post(':id')
   deleteProduct(@Param('id') id: string, @Res() res: Response) {
     this.productsService.deleteProduct(Number(id));
