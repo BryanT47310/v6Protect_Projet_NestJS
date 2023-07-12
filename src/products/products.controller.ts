@@ -27,5 +27,6 @@ export class ProductsController {
     this.productsService.deleteProduct(Number(id));
     const products = this.productsService.getAllProducts();
     res.render('products', { products });
+    res.redirect('/products');
   }
 }
