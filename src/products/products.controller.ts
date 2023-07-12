@@ -14,12 +14,14 @@ import { ProductsService } from './products.service';
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
+  //GetAllProducts
   @Get()
   getAllProducts(@Res() res: Response) {
     const products = this.productsService.getAllProducts();
     res.render('products', { products });
   }
 
+  //AddProduct
   @Post()
   addProduct(@Body() product: any, @Res() res: Response) {
     this.productsService.addProduct(product);
@@ -27,8 +29,11 @@ export class ProductsController {
     res.render('products', { products });
   }
 
-  @Delete(':id')
-  deleteProduct(@Param('id') id: string) {
-    return this.productsService.deleteProduct(Number(id));
+  //DeleteProduct
+  @Post(':id')
+  deleteProduct(@Param('id') id: string, @Res() res: Response) {
+    this.productsService.deleteProduct(Number(id));
+    const products = this.productsService.getAllProducts();
+    res.render('products', { products });
   }
 }
