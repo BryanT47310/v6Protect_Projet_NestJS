@@ -25,8 +25,6 @@ export class ProductsController {
   @Post(':id')
   deleteProduct(@Param('id') id: string, @Res() res: Response) {
     this.productsService.deleteProduct(Number(id));
-    const products = this.productsService.getAllProducts();
-    res.render('products', { products });
     res.redirect('/products');
   }
 }
