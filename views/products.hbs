@@ -1,0 +1,32 @@
+{{!-- products.hbs --}}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liste des produits</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <h1>Liste des produits</h1>
+    <ul>
+      {{#each products}}
+        <li>
+          <span>{{name}}</span><br/>
+          <span>{{description}}</span><br/>
+          <span>Prix : {{price}} €</span><br/>
+          <span>Quantité disponible : {{quantity}}</span>
+          <form method="POST" action="/products/{{id}}">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Supprimer</button>
+          </form><br/>
+        </li>
+      {{/each}}
+    </ul>
+    <form method="POST" action="/products">
+      <input type="text" name="name" placeholder="Nom du produit">
+      <input type="text" name="description" placeholder="Description">
+      <input type="number" name="price" placeholder="Prix">
+      <input type="number" name="quantity" placeholder="Quantité">
+      <button type="submit">Ajouter un produit</button>
+    </form>
+  </body>
+</html>
