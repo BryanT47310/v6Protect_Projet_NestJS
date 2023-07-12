@@ -10,6 +10,7 @@ export class ProductsService {
     this.loadProducts();
   }
 
+  //Récupération des produits dans le fichier JSON
   private loadProducts() {
     try {
       const fileContent = fs.readFileSync(this.productsFilePath, 'utf-8');
@@ -19,6 +20,7 @@ export class ProductsService {
     }
   }
 
+  //Mise à jour du fichier JSON avec les nouveaux produits
   private saveProducts() {
     fs.writeFileSync(
       this.productsFilePath,
@@ -26,10 +28,12 @@ export class ProductsService {
     );
   }
 
+  //Récupération de tous les produits
   getAllProducts() {
     return this.products;
   }
 
+  //Ajout d'un produit dans le fichier JSON
   addProduct(product: any) {
     const newProduct = {
       id: this.products.length + 1,
@@ -40,6 +44,7 @@ export class ProductsService {
     return newProduct;
   }
 
+  //Suppression d'un produit dans le fichier JSON
   deleteProduct(id: number) {
     const index = this.products.findIndex((product) => product.id === id);
     if (index !== -1) {

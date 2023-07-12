@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  //Redirection vers la page des produits comme page par defaut
   @Get()
   redirectToProducts(@Res() res: Response) {
     res.redirect('/products');
