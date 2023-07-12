@@ -15,44 +15,9 @@
   },
   {
     "id": 3,
-    "name": "3",
-    "description": "33",
-    "price": "3",
-    "quantity": "3"
-  },
-  {
-    "id": 4,
-    "name": "4",
-    "description": "44",
-    "price": "444",
-    "quantity": "4444"
-  },
-  {
-    "id": 5,
     "name": "a",
     "description": "a",
     "price": "1",
     "quantity": "1"
-  },
-  {
-    "id": 6,
-    "name": "f",
-    "description": "f",
-    "price": "1",
-    "quantity": "-1"
-  },
-  {
-    "id": 7,
-    "name": "q",
-    "description": "q",
-    "price": "1",
-    "quantity": "1"
-  },
-  {
-    "id": 8,
-    "name": "w",
-    "description": "",
-    "price": "",
-    "quantity": ""
   }
 ]
